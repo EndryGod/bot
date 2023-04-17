@@ -1,0 +1,22 @@
+import random
+import telebot
+
+# Token de tu bot en Telegram
+TOKEN = '6166049914:AAHX4iFKhZza_Qymvg7PEVF_GNaUQz3OtDs
+'
+
+# Crear objeto de bot
+bot = telebot.TeleBot(6166049914:AAHX4iFKhZza_Qymvg7PEVF_GNaUQz3OtDs
+)
+
+# Manejador de cualquier mensaje enviado por los usuarios
+@bot.message_handler(func=lambda message: True)
+def echo_all(message):
+    # Respuestas aleatorias que puede dar el bot
+    respuestas = ['hmmm, tienes gei', 'hola putita', 'sexo anal', 'me puedes mamar el pipe']
+    respuesta = random.choice(respuestas)
+    # Enviar respuesta al usuario
+    bot.reply_to(message, respuesta)
+
+# Ejecutar bot
+bot.polling()
